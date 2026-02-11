@@ -69,14 +69,14 @@ const Registro = () => {
   return (
     <div className="min-h-screen bg-background px-4 sm:px-6 py-4">
       {/* Header */}
-      <div className="mb-8 flex items-center gap-3 max-w-3xl mx-auto">
+      <div className="mb-8 flex items-center gap-3 max-w-5xl mx-auto">
         <Link to="/">
           <ArrowLeft className="h-6 w-6 text-foreground" />
         </Link>
         <h1 className="text-xl font-bold">Registro de Conector</h1>
       </div>
 
-      <form onSubmit={handleSubmit} className="mx-auto max-w-2xl space-y-5 pb-8">
+      <form onSubmit={handleSubmit} className="mx-auto max-w-4xl space-y-5 pb-8">
         <div className="grid md:grid-cols-2 gap-5">
           <div className="space-y-2">
             <Label>Nombre completo</Label>

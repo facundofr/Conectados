@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Shield, Users, DollarSign, TrendingUp, Plus, Menu, User } from "lucide-react";
-import { useState } from "react";
+import { Shield, Users, DollarSign, TrendingUp, Plus, User } from "lucide-react";
 
 const Dashboard = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -45,16 +42,13 @@ const Dashboard = () => {
                 <User className="h-5 w-5" />
               </Button>
             </Link>
-            <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-              <Menu className="h-5 w-5" />
-            </Button>
           </div>
         </div>
       </header>
 
       {/* Content */}
       <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto pb-24 md:pb-6">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto space-y-6">
           {/* Welcome */}
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold mb-1">¡Hola, Conector!</h1>
@@ -83,8 +77,8 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground">Nuevos este mes</p>
             </Card>
 
-            {/* Earnings Card - spans 2 cols on desktop */}
-            <Card className="p-6 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground md:col-span-2">
+            {/* Earnings Card - spans full width */}
+            <Card className="p-6 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground col-span-2">
               <div className="flex items-center gap-2 mb-2">
                 <DollarSign className="h-5 w-5" />
                 <span className="text-sm font-medium opacity-90">Créditos disponibles</span>

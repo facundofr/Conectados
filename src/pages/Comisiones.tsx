@@ -38,7 +38,7 @@ const Comisiones = () => {
 
       {/* Content */}
       <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-6xl mx-auto space-y-6">
         {/* Balance Card */}
         <Card className="p-6 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
           <div className="flex items-center justify-between mb-4">

@@ -61,7 +61,7 @@ const NuevoReferido = () => {
       </header>
 
       {/* Content */}
-      <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-3xl mx-auto">
+      <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-5xl mx-auto">
         <Card className="p-6 rounded-xl bg-primary/5 border-primary/20 mb-6">
           <div className="flex items-start gap-3">
             <div className="p-2 rounded-lg bg-primary/10 mt-0.5">
@@ -76,7 +76,7 @@ const NuevoReferido = () => {
           </div>
         </Card>
 
-        <form onSubmit={handleSubmit} className="space-y-5 max-w-2xl mx-auto pb-6">
+        <form onSubmit={handleSubmit} className="space-y-5 max-w-4xl mx-auto pb-6">
           <div className="grid md:grid-cols-2 gap-5">
             <div className="space-y-2">
               <Label htmlFor="nombre">Nombre completo *</Label>

@@ -55,7 +55,7 @@ const Perfil = () => {
 
       {/* Content */}
       <div className="px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto">
-        <div className="max-w-3xl mx-auto space-y-6">
+        <div className="max-w-5xl mx-auto space-y-6">
         {/* Profile Card */}
         <Card className="p-6 rounded-xl text-center">
           <div className="flex justify-center mb-4">

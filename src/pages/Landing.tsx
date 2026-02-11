@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Shield, Users, TrendingUp, Award, Menu } from "lucide-react";
+import { Shield, Users, TrendingUp, Award, Menu, CheckCircle, DollarSign, Lock } from "lucide-react";
 
 const Landing = () => {
   return (
@@ -27,32 +27,32 @@ const Landing = () => {
       </header>
 
       {/* Hero */}
-      <section className="px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 lg:pt-16 pb-12 lg:pb-20 text-center">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="mx-auto md:mx-0 flex h-48 w-48 md:h-64 md:w-64 lg:h-80 lg:w-80 items-center justify-center rounded-full bg-primary/10 order-1 md:order-2">
-              <Users className="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 text-primary" />
+      <section className="px-4 sm:px-6 lg:px-8 pt-6 sm:pt-12 lg:pt-16 pb-8 sm:pb-12 lg:pb-20 text-center">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+            <div className="mx-auto md:mx-0 flex h-36 w-36 sm:h-48 sm:w-48 md:h-64 md:w-64 lg:h-80 lg:w-80 items-center justify-center rounded-full bg-primary/10 order-1 md:order-2">
+              <Users className="h-16 w-16 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 text-primary" />
             </div>
             <div className="text-center md:text-left order-2 md:order-1">
-              <h1 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              <h1 className="mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">
                 Conectá y <span className="text-primary">Ganá</span>
               </h1>
-              <p className="mb-8 text-muted-foreground text-base sm:text-lg lg:text-xl">
+              <p className="mb-6 text-muted-foreground text-sm sm:text-base lg:text-xl">
                 Sumate al programa de referidos de Cober y generá ingresos recomendando planes de medicina prepaga.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 md:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 md:justify-start">
                 <Link to="/registro" className="flex-1 sm:flex-initial">
-                  <Button size="lg" className="w-full sm:w-auto rounded-xl text-base font-semibold h-14 px-8">
+                  <Button size="lg" className="w-full sm:w-auto rounded-xl text-sm sm:text-base font-semibold h-12 sm:h-14 px-6 sm:px-8">
                     Quiero ser Conector
                   </Button>
                 </Link>
                 <Link to="/login" className="md:hidden">
-                  <Button variant="outline" size="lg" className="w-full rounded-xl h-14">
+                  <Button variant="outline" size="lg" className="w-full rounded-xl h-12 text-sm">
                     Iniciar sesión
                   </Button>
                 </Link>
               </div>
-              <Link to="/login" className="mt-4 hidden md:inline-block text-sm text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/login" className="mt-3 hidden md:inline-block text-sm text-muted-foreground hover:text-primary transition-colors">
                 Ya tengo cuenta · Iniciar sesión
               </Link>
             </div>
@@ -61,10 +61,10 @@ const Landing = () => {
       </section>
 
       {/* Benefits */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-16 lg:pb-24 bg-muted/30">
-        <div className="max-w-6xl mx-auto pt-16 lg:pt-20">
-          <h2 className="mb-8 lg:mb-12 text-center text-xl sm:text-2xl lg:text-3xl font-bold">Beneficios Exclusivos</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+      <section className="px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 lg:pb-24 bg-muted/30">
+        <div className="max-w-6xl mx-auto pt-12 sm:pt-16 lg:pt-20">
+          <h2 className="mb-6 sm:mb-8 lg:mb-12 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">Beneficios Exclusivos</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {[
               { icon: Award, title: "Sin experiencia previa", desc: "No necesitás ser vendedor, solo conectar personas." },
               { icon: TrendingUp, title: "Comisiones atractivas", desc: "Ganá créditos por cada referido que se convierta en alta." },
@@ -73,20 +73,157 @@ const Landing = () => {
             ].map((b) => (
               <div
                 key={b.title}
-                className="flex items-start gap-4 rounded-xl border border-border bg-card p-4"
+                className="flex items-start gap-3 rounded-xl border border-border bg-card p-3 sm:p-4"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15">
-                  <b.icon className="h-5 w-5 text-primary" />
+                <div className="flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15">
+                  <b.icon className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold">{b.title}</h3>
-                  <p className="text-sm text-muted-foreground">{b.desc}</p>
+                  <h3 className="font-semibold text-sm sm:text-base">{b.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">{b.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* How It Works */}
+      <section className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="mb-3 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">¿Cómo funciona?</h2>
+          <div className="h-1 w-16 bg-primary mx-auto mb-8 sm:mb-12"></div>
+          
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="absolute -top-3 -left-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base sm:text-lg z-10">
+                1
+              </div>
+              <div className="rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900/20 dark:to-orange-800/20 p-6 sm:p-8 pt-10 sm:pt-12 h-48 sm:h-64 flex items-center justify-center mb-4 sm:mb-6">
+                <div className="relative w-24 h-36 sm:w-32 sm:h-48 bg-white dark:bg-gray-800 rounded-3xl shadow-xl border-2 sm:border-4 border-gray-800 dark:border-gray-200">
+                  <div className="absolute top-6 sm:top-8 left-3 sm:left-4 right-3 sm:right-4 space-y-1.5 sm:space-y-2">
+                    <div className="h-1.5 sm:h-2 bg-gray-300 dark:bg-gray-600 rounded"></div>
+                    <div className="h-1.5 sm:h-2 bg-gray-300 dark:bg-gray-600 rounded w-3/4"></div>
+                    <div className="h-1.5 sm:h-2 bg-gray-300 dark:bg-gray-600 rounded w-1/2"></div>
+                  </div>
+                  <div className="absolute bottom-6 sm:bottom-8 right-3 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full"></div>
+                </div>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Registrate</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
+                Completá el formulario y activá tu perfil oficial hoy mismo.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="absolute -top-3 -left-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base sm:text-lg z-10">
+                2
+              </div>
+              <div className="rounded-2xl bg-gradient-to-br from-pink-100 to-rose-200 dark:from-pink-900/20 dark:to-rose-800/20 p-6 sm:p-8 pt-10 sm:pt-12 h-48 sm:h-64 flex items-center justify-center mb-4 sm:mb-6">
+                <div className="relative w-24 h-36 sm:w-32 sm:h-48 bg-white dark:bg-gray-800 rounded-3xl shadow-xl border-2 sm:border-4 border-gray-800 dark:border-gray-200">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Users className="h-14 w-14 sm:h-20 sm:w-20 text-primary/60" />
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Conectá</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
+                Empezá a registrar Conectados en la plataforma
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="absolute -top-3 -left-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-base sm:text-lg z-10">
+                3
+              </div>
+              <div className="rounded-2xl bg-gradient-to-br from-teal-100 to-cyan-200 dark:from-teal-900/20 dark:to-cyan-800/20 p-6 sm:p-8 pt-10 sm:pt-12 h-48 sm:h-64 flex items-center justify-center mb-4 sm:mb-6">
+                <div className="relative w-32 h-24 sm:w-40 sm:h-32 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-3 sm:p-4">
+                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4">
+                    <TrendingUp className="h-8 w-8 sm:h-12 sm:w-12 text-primary/60 mb-1 sm:mb-2" />
+                    <div className="flex gap-0.5 sm:gap-1">
+                      <div className="h-6 w-1.5 sm:h-8 sm:w-2 bg-primary/40 rounded"></div>
+                      <div className="h-8 w-1.5 sm:h-12 sm:w-2 bg-primary/50 rounded"></div>
+                      <div className="h-10 w-1.5 sm:h-16 sm:w-2 bg-primary/60 rounded"></div>
+                      <div className="h-12 w-1.5 sm:h-20 sm:w-2 bg-primary/70 rounded"></div>
+                      <div className="h-16 w-1.5 sm:h-24 sm:w-2 bg-primary rounded"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Cobrá</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
+                Recibí tus Créditos por cada conexión exitosa
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 sm:mt-12 text-center">
+            <Link to="/registro">
+              <Button size="lg" className="rounded-full text-sm sm:text-base font-semibold h-12 sm:h-14 px-8 sm:px-12 bg-primary hover:bg-primary/90">
+                Quiero ser Conector 🚀
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-muted/50 border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-primary flex items-center justify-center">
+                  <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-primary-foreground" />
+                </div>
+                <span className="text-lg sm:text-xl font-bold">COBER</span>
+              </div>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                Programa de Referidos - Conectá y Ganá
+              </p>
+            </div>
+
+            {/* Links */}
+            <div>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Enlaces</h4>
+              <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <li><Link to="/login" className="hover:text-primary transition-colors">Iniciar sesión</Link></li>
+                <li><Link to="/registro" className="hover:text-primary transition-colors">Registrarme</Link></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Términos y Condiciones</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Política de Privacidad</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contacto</h4>
+              <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
+                <li>Email: contacto@cober.com.ar</li>
+                <li>Tel: 0800-123-COBER</li>
+                <li>Lun a Vie: 9:00 - 18:00 hs</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Security Icons & Copyright */}
+          <div className="pt-6 sm:pt-8 border-t border-border">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 sm:gap-4 text-muted-foreground">
+                <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+                <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+                <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+              </div>
+              <p className="text-[10px] sm:text-xs text-muted-foreground text-center">
+                © 2024 COBER. TODOS LOS DERECHOS RESERVADOS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
