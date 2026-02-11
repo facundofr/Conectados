@@ -17,7 +17,7 @@ const planes = [
   "No está seguro/a",
 ];
 
-const NuevoReferido = () => {
+const NuevoConectado = () => {
   const [form, setForm] = useState({
     nombre: "",
     email: "",
@@ -41,10 +41,10 @@ const NuevoReferido = () => {
     setTimeout(() => {
       setLoading(false);
       toast({
-        title: "¡Referido agregado!",
+        title: "¡Conectado agregado!",
         description: "El contacto fue registrado exitosamente.",
       });
-      navigate("/referidos");
+      navigate("/conectados");
     }, 1500);
   };
 
@@ -56,7 +56,7 @@ const NuevoReferido = () => {
           <Link to="/dashboard">
             <ArrowLeft className="h-6 w-6 text-foreground" />
           </Link>
-          <h1 className="text-xl font-bold">Nuevo Referido</h1>
+          <h1 className="text-xl font-bold">Nuevo Conectado</h1>
         </div>
       </header>
 
@@ -70,7 +70,7 @@ const NuevoReferido = () => {
             <div>
               <h3 className="font-semibold mb-1">¿Cómo funciona?</h3>
               <p className="text-sm text-muted-foreground">
-                Completá los datos de tu referido. Nuestro equipo lo contactará y si se concreta el alta, ganarás créditos.
+                Completá los datos de tu conectado. Nuestro equipo lo contactará y si se concreta el alta, ganarás créditos.
               </p>
             </div>
           </div>
@@ -145,7 +145,7 @@ const NuevoReferido = () => {
               className="min-h-24 rounded-xl bg-secondary border-border resize-none"
             />
             <p className="text-xs text-muted-foreground">
-              Cualquier información adicional que ayude al equipo a contactar mejor al referido.
+              Cualquier información adicional que ayude al equipo a contactar mejor al conectado.
             </p>
           </div>
 
@@ -160,7 +160,7 @@ const NuevoReferido = () => {
               ) : (
                 <>
                   <Check className="h-5 w-5 mr-2" />
-                  Agregar Referido
+                  Agregar Conectado
                 </>
               )}
             </Button>
@@ -181,4 +181,4 @@ const NuevoReferido = () => {
   );
 };
 
-export default NuevoReferido;
+export default NuevoConectado;

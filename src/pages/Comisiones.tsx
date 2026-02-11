@@ -3,20 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Shield, Users, DollarSign, User, ArrowLeft, TrendingUp, Download, Calendar, CheckCircle } from "lucide-react";
+import { Shield, Users, DollarSign, User, ArrowLeft, TrendingUp, Download, Calendar, CheckCircle, Plus } from "lucide-react";
 
 const transaccionesMock = [
-  { id: 1, referido: "María González", monto: 2500, fecha: "15/01/2026", estado: "pagado", tipo: "Alta" },
-  { id: 2, referido: "Juan Pérez", monto: 2500, fecha: "05/01/2026", estado: "pagado", tipo: "Alta" },
-  { id: 3, referido: "Laura Sánchez", monto: 1800, fecha: "28/12/2025", estado: "pendiente", tipo: "Alta" },
-  { id: 4, referido: "Ajuste mensual", monto: 5000, fecha: "01/12/2025", estado: "pagado", tipo: "Bonus" },
-  { id: 5, referido: "Roberto Díaz", monto: 2500, fecha: "15/11/2025", estado: "pagado", tipo: "Alta" },
+  { id: 1, conectado: "María González", monto: 2500, fecha: "15/01/2026", estado: "pagado", tipo: "Alta" },
+  { id: 2, conectado: "Juan Pérez", monto: 2500, fecha: "05/01/2026", estado: "pagado", tipo: "Alta" },
+  { id: 3, conectado: "Laura Sánchez", monto: 1800, fecha: "28/12/2025", estado: "pendiente", tipo: "Alta" },
+  { id: 4, conectado: "Ajuste mensual", monto: 5000, fecha: "01/12/2025", estado: "pagado", tipo: "Bonus" },
+  { id: 5, conectado: "Roberto Díaz", monto: 2500, fecha: "15/11/2025", estado: "pagado", tipo: "Alta" },
 ];
 
 const estadisticasMensuales = [
-  { mes: "Enero 2026", referidos: 3, creditos: 7300, activos: 2 },
-  { mes: "Diciembre 2025", referidos: 2, creditos: 6800, activos: 1 },
-  { mes: "Noviembre 2025", referidos: 4, creditos: 12500, activos: 3 },
+  { mes: "Enero 2026", conectados: 3, creditos: 7300, activos: 2 },
+  { mes: "Diciembre 2025", conectados: 2, creditos: 6800, activos: 1 },
+  { mes: "Noviembre 2025", conectados: 4, creditos: 12500, activos: 3 },
 ];
 
 const Comisiones = () => {
@@ -88,7 +88,7 @@ const Comisiones = () => {
                 <Card key={trans.id} className="p-4 rounded-xl">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h3 className="font-semibold mb-1">{trans.referido}</h3>
+                      <h3 className="font-semibold mb-1">{trans.conectado}</h3>
                       <div className="flex items-center gap-2">
                         <Badge variant="outline" className="text-xs">
                           {trans.tipo}
@@ -139,7 +139,7 @@ const Comisiones = () => {
                 <div className="grid grid-cols-2 gap-4 pt-3 border-t border-border">
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">Conectados</p>
-                    <p className="text-lg font-semibold">{est.referidos}</p>
+                    <p className="text-lg font-semibold">{est.conectados}</p>
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground mb-1">Activos</p>
@@ -161,7 +161,7 @@ const Comisiones = () => {
             <div className="flex-1">
               <h3 className="font-semibold text-sm mb-1">¿Cómo se calculan los créditos?</h3>
               <p className="text-xs text-muted-foreground">
-                Ganás $2,500 por cada referido que se dé de alta. Los créditos quedan disponibles una vez confirmada el alta del cliente.
+                Ganás $2,500 por cada conectado que se dé de alta. Los créditos quedan disponibles una vez confirmada el alta del cliente.
               </p>
             </div>
           </div>
@@ -176,13 +176,13 @@ const Comisiones = () => {
             <Shield className="h-5 w-5" />
             <span className="text-xs">Inicio</span>
           </Link>
-          <Link to="/referidos" className="flex flex-col items-center gap-1 text-muted-foreground">
+          <Link to="/conectados" className="flex flex-col items-center gap-1 text-muted-foreground">
             <Users className="h-5 w-5" />
             <span className="text-xs">Conectados</span>
           </Link>
-          <Link to="/nuevo-referido" className="flex flex-col items-center gap-1 text-muted-foreground">
-            <div className="p-2 rounded-full bg-primary/10">
-              <DollarSign className="h-5 w-5 text-primary" />
+          <Link to="/nuevo-conectado" className="flex flex-col items-center gap-1 text-muted-foreground">
+            <div className="p-2 rounded-full bg-primary">
+              <Plus className="h-5 w-5 text-primary-foreground" />
             </div>
           </Link>
           <Link to="/comisiones" className="flex flex-col items-center gap-1 text-primary">

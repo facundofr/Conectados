@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
 import { Separator } from "@/components/ui/separator";
-import { Shield, Users, DollarSign, User, ArrowLeft, Mail, Phone, MapPin, Edit, Save, Bell, HelpCircle, FileText, LogOut, ChevronRight } from "lucide-react";
+import { Shield, Users, DollarSign, User, ArrowLeft, Mail, Phone, MapPin, Edit, Save, Bell, HelpCircle, FileText, LogOut, ChevronRight, Plus } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Perfil = () => {
@@ -69,7 +69,7 @@ const Perfil = () => {
           <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border">
             <div>
               <p className="text-2xl font-bold text-primary">12</p>
-              <p className="text-xs text-muted-foreground mt-1">Referidos</p>
+              <p className="text-xs text-muted-foreground mt-1">Conectados</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-primary">$24.5k</p>
@@ -256,13 +256,13 @@ const Perfil = () => {
             <Shield className="h-5 w-5" />
             <span className="text-xs">Inicio</span>
           </Link>
-          <Link to="/referidos" className="flex flex-col items-center gap-1 text-muted-foreground">
+          <Link to="/conectados" className="flex flex-col items-center gap-1 text-muted-foreground">
             <Users className="h-5 w-5" />
-            <span className="text-xs">Referidos</span>
+            <span className="text-xs">Conectados</span>
           </Link>
-          <Link to="/nuevo-referido" className="flex flex-col items-center gap-1 text-muted-foreground">
-            <div className="p-2 rounded-full bg-primary/10">
-              <DollarSign className="h-5 w-5 text-primary" />
+          <Link to="/nuevo-conectado" className="flex flex-col items-center gap-1 text-muted-foreground">
+            <div className="p-2 rounded-full bg-primary">
+              <Plus className="h-5 w-5 text-primary-foreground" />
             </div>
           </Link>
           <Link to="/comisiones" className="flex flex-col items-center gap-1 text-muted-foreground">

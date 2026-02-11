@@ -24,10 +24,10 @@ const Dashboard = () => {
                   Inicio
                 </Button>
               </Link>
-              <Link to="/referidos">
+              <Link to="/conectados">
                 <Button variant="ghost" size="sm">
                   <Users className="h-4 w-4 mr-2" />
-                  Referidos
+                  Conectado
                 </Button>
               </Link>
               <Link to="/comisiones">
@@ -64,7 +64,7 @@ const Dashboard = () => {
                 </div>
               </div>
               <p className="text-2xl font-bold mb-1">12</p>
-              <p className="text-sm text-muted-foreground">Referidos activos</p>
+              <p className="text-sm text-muted-foreground">Conectados activos</p>
             </Card>
 
             <Card className="p-4 rounded-xl bg-primary/5 border-primary/20">
@@ -95,28 +95,28 @@ const Dashboard = () => {
             <div className="space-y-3">
               <h2 className="text-lg font-semibold">Acciones rápidas</h2>
               
-              <Link to="/nuevo-referido">
+              <Link to="/nuevo-conectado">
             <Card className="p-4 rounded-xl hover:bg-accent transition-colors cursor-pointer">
               <div className="flex items-center gap-4">
                 <div className="p-3 rounded-xl bg-primary/10">
                   <Plus className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold mb-1">Agregar Referido</h3>
+                  <h3 className="font-semibold mb-1">Agregar Conectado</h3>
                   <p className="text-sm text-muted-foreground">Cargá un nuevo contacto</p>
                 </div>
               </div>
             </Card>
           </Link>
 
-              <Link to="/referidos">
+              <Link to="/conectados">
                 <Card className="p-4 rounded-xl hover:bg-accent transition-colors cursor-pointer">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-xl bg-primary/10">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-semibold mb-1">Mis Referidos</h3>
+                      <h3 className="font-semibold mb-1">Mis Conectados</h3>
                       <p className="text-sm text-muted-foreground">Ver estado de contactos</p>
                     </div>
                   </div>
@@ -155,7 +155,7 @@ const Dashboard = () => {
                       <Plus className="h-4 w-4 text-amber-600" />
                     </div>
                     <div className="flex-1">
-                      <p className="text-sm font-medium">Nuevo referido agregado</p>
+                      <p className="text-sm font-medium">Nuevo conectado agregado</p>
                       <p className="text-xs text-muted-foreground">Ana Martínez · Hace 5 días</p>
                     </div>
                   </div>
@@ -173,11 +173,11 @@ const Dashboard = () => {
             <Shield className="h-5 w-5" />
             <span className="text-xs font-medium">Inicio</span>
           </Link>
-          <Link to="/referidos" className="flex flex-col items-center gap-1 text-muted-foreground">
+          <Link to="/conectados" className="flex flex-col items-center gap-1 text-muted-foreground">
             <Users className="h-5 w-5" />
-            <span className="text-xs">Referidos</span>
+            <span className="text-xs">Conectados</span>
           </Link>
-          <Link to="/nuevo-referido" className="flex flex-col items-center gap-1 text-muted-foreground">
+          <Link to="/nuevo-conectado" className="flex flex-col items-center gap-1 text-muted-foreground">
             <div className="p-2 rounded-full bg-primary">
               <Plus className="h-5 w-5 text-primary-foreground" />
             </div>

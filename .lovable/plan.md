@@ -1,6 +1,6 @@
 
 
-# Plan: Cober Conectados - Programa de Referidos de Medicina Prepaga
+# Plan: Cober Conectados - Programa de Conectados de Medicina Prepaga
 
 ## Estética y Diseño
 - **Tema oscuro** con fondo negro/gris muy oscuro
@@ -85,10 +85,10 @@
 
 ## Backend (Supabase)
 - **Autenticación** con email/contraseña
-- **Tablas**: profiles, conectados (referidos), transacciones/créditos, cursos y progreso
+- **Tablas**: profiles, conectados, transacciones/créditos, cursos y progreso
 - **Roles**: conector, admin
 - **RLS** para que cada conector solo vea sus datos
-- **Estados de referidos**: pendiente, en gestión, aprobado, rechazado
+- **Estados de conectados**: pendiente, en gestión, aprobado, rechazado
 
 ---
 

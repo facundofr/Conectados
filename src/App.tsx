@@ -8,8 +8,8 @@ import Login from "./pages/Login";
 import Registro from "./pages/Registro";
 import Confirmacion from "./pages/Confirmacion";
 import Dashboard from "./pages/Dashboard";
-import Referidos from "./pages/Referidos";
-import NuevoReferido from "./pages/NuevoReferido";
+import Conectados from "./pages/Conectados";
+import NuevoConectado from "./pages/NuevoConectado";
 import Comisiones from "./pages/Comisiones";
 import Perfil from "./pages/Perfil";
 import NotFound from "./pages/NotFound";
@@ -28,8 +28,8 @@ const App = () => (
           <Route path="/registro" element={<Registro />} />
           <Route path="/confirmacion" element={<Confirmacion />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/referidos" element={<Referidos />} />
-          <Route path="/nuevo-referido" element={<NuevoReferido />} />
+          <Route path="/conectados" element={<Conectados />} />
+          <Route path="/nuevo-conectado" element={<NuevoConectado />} />
           <Route path="/comisiones" element={<Comisiones />} />
           <Route path="/perfil" element={<Perfil />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

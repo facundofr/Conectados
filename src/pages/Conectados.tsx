@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Users, DollarSign, User, ArrowLeft, Search, Plus, Phone, Mail, Clock, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
 
-const referidosMock = [
+const conectadosMock = [
   { id: 1, nombre: "María González", email: "maria@email.com", telefono: "11-2345-6789", estado: "activo", creditos: 2500, fecha: "15/01/2026" },
   { id: 2, nombre: "Carlos Ruiz", email: "carlos@email.com", telefono: "11-3456-7890", estado: "pendiente", creditos: 0, fecha: "10/01/2026" },
   { id: 3, nombre: "Ana Martínez", email: "ana@email.com", telefono: "11-4567-8901", estado: "contactado", creditos: 0, fecha: "08/01/2026" },
@@ -15,19 +15,19 @@ const referidosMock = [
   { id: 6, nombre: "Roberto Díaz", email: "roberto@email.com", telefono: "11-7890-1234", estado: "pendiente", creditos: 0, fecha: "28/12/2025" },
 ];
 
-type EstadoReferido = "activo" | "pendiente" | "contactado" | "rechazado";
+type EstadoConectado = "activo" | "pendiente" | "contactado" | "rechazado";
 
-const estadoConfig: Record<EstadoReferido, { label: string; variant: "default" | "secondary" | "destructive" | "outline"; icon: React.ComponentType<{ className?: string }> }> = {
+const estadoConfig: Record<EstadoConectado, { label: string; variant: "default" | "secondary" | "destructive" | "outline"; icon: React.ComponentType<{ className?: string }> }> = {
   activo: { label: "Activo", variant: "default", icon: CheckCircle },
   pendiente: { label: "Pendiente", variant: "secondary", icon: Clock },
   contactado: { label: "Contactado", variant: "outline", icon: Phone },
   rechazado: { label: "Rechazado", variant: "destructive", icon: XCircle },
 };
 
-const Referidos = () => {
+const Conectados = () => {
   const [searchTerm, setSearchTerm] = useState("");
   
-  const filteredReferidos = referidosMock.filter(ref => 
+  const filteredConectados = conectadosMock.filter(ref => 
     ref.nombre.toLowerCase().includes(searchTerm.toLowerCase()) ||
     ref.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -41,8 +41,8 @@ const Referidos = () => {
             <ArrowLeft className="h-6 w-6 text-foreground" />
           </Link>
           <div className="flex-1">
-            <h1 className="text-xl font-bold">Mis Referidos</h1>
-            <p className="text-sm text-muted-foreground">{referidosMock.length} contactos en total</p>
+            <h1 className="text-xl font-bold">Mis Conectados</h1>
+            <p className="text-sm text-muted-foreground">{conectadosMock.length} contactos en total</p>
           </div>
         </div>
       </header>
@@ -77,21 +77,21 @@ const Referidos = () => {
           </Card>
         </div>
 
-          {/* Referidos List */}
+          {/* Conectados List */}
           <div className="grid md:grid-cols-2 gap-3">
-            {filteredReferidos.map((referido) => {
-            const config = estadoConfig[referido.estado as EstadoReferido];
+            {filteredConectados.map((conectado) => {
+            const config = estadoConfig[conectado.estado as EstadoConectado];
             const Icon = config.icon;
             
             return (
-              <Card key={referido.id} className="p-4 rounded-xl hover:bg-accent transition-colors">
+              <Card key={conectado.id} className="p-4 rounded-xl hover:bg-accent transition-colors">
                 <div className="flex items-start gap-3">
                   <div className="p-2.5 rounded-full bg-primary/10 mt-1">
                     <User className="h-5 w-5 text-primary" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2 mb-2">
-                      <h3 className="font-semibold truncate">{referido.nombre}</h3>
+                      <h3 className="font-semibold truncate">{conectado.nombre}</h3>
                       <Badge variant={config.variant} className="shrink-0 text-xs">
                         <Icon className="h-3 w-3 mr-1" />
                         {config.label}
@@ -101,19 +101,19 @@ const Referidos = () => {
                     <div className="space-y-1.5">
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Mail className="h-3.5 w-3.5 shrink-0" />
-                        <span className="truncate">{referido.email}</span>
+                        <span className="truncate">{conectado.email}</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Phone className="h-3.5 w-3.5 shrink-0" />
-                        <span>{referido.telefono}</span>
+                        <span>{conectado.telefono}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between mt-3 pt-3 border-t border-border">
-                      <span className="text-xs text-muted-foreground">Agregado: {referido.fecha}</span>
-                      {referido.creditos > 0 && (
+                      <span className="text-xs text-muted-foreground">Agregado: {conectado.fecha}</span>
+                      {conectado.creditos > 0 && (
                         <span className="text-xs font-semibold text-green-600">
-                          +${referido.creditos.toLocaleString()}
+                          +${conectado.creditos.toLocaleString()}
                         </span>
                       )}
                     </div>
@@ -124,17 +124,17 @@ const Referidos = () => {
             })}
           </div>
 
-          {filteredReferidos.length === 0 && (
+          {filteredConectados.length === 0 && (
             <div className="text-center py-12">
               <Users className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-              <p className="text-muted-foreground">No se encontraron referidos</p>
+              <p className="text-muted-foreground">No se encontraron conectados</p>
             </div>
           )}
         </div>
       </div>
 
       {/* Floating Action Button - Hidden on desktop */}
-      <Link to="/nuevo-referido">
+      <Link to="/nuevo-conectado">
         <Button
           size="lg"
           className="md:hidden fixed bottom-24 right-6 h-14 w-14 rounded-full shadow-lg z-40"
@@ -150,13 +150,13 @@ const Referidos = () => {
             <Shield className="h-5 w-5" />
             <span className="text-xs">Inicio</span>
           </Link>
-          <Link to="/referidos" className="flex flex-col items-center gap-1 text-primary">
+          <Link to="/conectados" className="flex flex-col items-center gap-1 text-primary">
             <Users className="h-5 w-5" />
-            <span className="text-xs font-medium">Referidos</span>
+            <span className="text-xs font-medium">Conectados</span>
           </Link>
-          <Link to="/nuevo-referido" className="flex flex-col items-center gap-1 text-muted-foreground">
-            <div className="p-2 rounded-full bg-primary/10">
-              <Plus className="h-5 w-5 text-primary" />
+          <Link to="/nuevo-conectado" className="flex flex-col items-center gap-1 text-muted-foreground">
+            <div className="p-2 rounded-full bg-primary">
+              <Plus className="h-5 w-5 text-primary-foreground" />
             </div>
           </Link>
           <Link to="/comisiones" className="flex flex-col items-center gap-1 text-muted-foreground">
@@ -173,4 +173,4 @@ const Referidos = () => {
   );
 };
 
-export default Referidos;
+export default Conectados;
