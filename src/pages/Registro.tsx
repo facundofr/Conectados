@@ -147,7 +147,7 @@ const Registro = () => {
             className="mt-0.5"
           />
           <label htmlFor="terminos" className="text-sm text-muted-foreground leading-snug cursor-pointer">
-            Acepto los <a href="#" className="text-primary hover:underline">términos y condiciones</a> del programa de referidos.
+            Acepto los <a href="#" className="text-primary hover:underline">términos y condiciones</a> del programa de conectados.
           </label>
         </div>
 

@@ -138,7 +138,7 @@ const Comisiones = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 pt-3 border-t border-border">
                   <div>
-                    <p className="text-xs text-muted-foreground mb-1">Referidos</p>
+                    <p className="text-xs text-muted-foreground mb-1">Conectados</p>
                     <p className="text-lg font-semibold">{est.referidos}</p>
                   </div>
                   <div>
@@ -178,7 +178,7 @@ const Comisiones = () => {
           </Link>
           <Link to="/referidos" className="flex flex-col items-center gap-1 text-muted-foreground">
             <Users className="h-5 w-5" />
-            <span className="text-xs">Referidos</span>
+            <span className="text-xs">Conectados</span>
           </Link>
           <Link to="/nuevo-referido" className="flex flex-col items-center gap-1 text-muted-foreground">
             <div className="p-2 rounded-full bg-primary/10">
