@@ -202,7 +202,7 @@ const Landing = () => {
                 <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
               </div>
               <p className="text-[10px] sm:text-xs text-muted-foreground text-center">
-                © 2024 COBER. TODOS LOS DERECHOS RESERVADOS.
+                © 2026 COBER. TODOS LOS DERECHOS RESERVADOS.
               </p>
             </div>
           </div>
